@@ -5,4 +5,4 @@ In this repository, you will find the code and data we used to perform Text mini
 all the data and code to transform the text. The shiny contains the shiny app code, data used to create it. The Rmarkdown folder contains
 the code to create the html report for the company.
 
-Dashboard link: https://sebastienpavot.shinyapps.io/SouthWestAirlines/
+Dashboard link: https://sebastienpavot.shinyapps.io/SouthWestAirlines_Dashboard/
