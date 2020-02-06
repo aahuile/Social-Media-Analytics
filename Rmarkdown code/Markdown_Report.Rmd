@@ -26,18 +26,20 @@ library(textcat)
 library(tidytext)
 library(tidyr)
 library(wordcloud)
-load(file = "Hashtag.Rdata")
+load("Hashtag.Rdata")
 load("fullhashsentiment.Rdata")
 load("HashtagLDA.Rdata")
 load("tweets.Rdata")
 load("tweets_to_southwest_summary.Rdata")
 load("top_comparison_terms.Rdata")
 load("comtok_count.Rdata")
-load("summarySentiment.Rdata")
+load("summarySentimenthw.Rdata")
 load("top_tweet_terms.Rdata")
 load("hw_source.Rdata")
 load("memberships_southy.Rdata")
 load("cloud_languages.Rdata")
+load("GlobalTweets.Rdata")
+load("GlobalTweetsToken.Rdata")
 ```
 
 # Introduction:
@@ -59,13 +61,12 @@ We divided the analysis in few differents topics:
 
 The Global analysis contains all the tweets we collected related to South West Airlines. Wether it's using hashtag or mentionning the brand or even just talking about the brand without mentionning it. 
 
-We collected ... tweets that are related to the company.
 
 First, let's check where are located the tweets that talk about the brand:
 
 ```{r , echo=FALSE}
 #change hashtag to the full data
-    leaflet(data = Hashtag)%>%
+    leaflet(data = GlobalTweets)%>%
       addProviderTiles(providers$Stamen.TonerLite,
                        options = providerTileOptions(noWrap = TRUE)
       ) %>%
@@ -76,7 +77,7 @@ Now, let's check the most comon words that are related to the company:
 
 ```{r, echo = FALSE}
 #Change Hashtag to full data
-GlobAnalyFrequent <- Hashtag %>%
+GlobAnalyFrequent <- GlobalTweetsToken %>%
   count(user_id,word)
 
 GlobAnalyFrequent %>%
@@ -238,7 +239,7 @@ wordcloud(names(cloud_languages),cloud_languages,
 Do sentiment analysis using "bing" dictionary to see how people feel about the southwest airline.
 
 ```{r,echo=FALSE}
-
+summarySentiment = summarySentimenthw
 summarySentiment %>%
   ungroup() %>%
   mutate(word = reorder(word, n)) %>%
