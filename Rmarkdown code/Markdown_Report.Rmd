@@ -105,7 +105,7 @@ In this analysis, we focused on 3 hashtags:
 We analyzed the number of tweets, their feeling using Bing & Afinn dictionary and create topic modeling in order to determine what are the mains subjects related to these hashtags.
 
 Here, we present some graphics that are related to the three hashtags tweets merged but if you want to look closer on a spcific hashtag, you can go on the dashboard and use the interactive filter:
-https://sebastienpavot.shinyapps.io/SouthWestAirlines/
+https://sebastienpavot.shinyapps.io/SouthWestAirlines_Dashboard/
 
 Let's have a look on the sentiment using Bing dictionary:
 ```{r, echo =  FALSE}
